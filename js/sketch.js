@@ -36,12 +36,12 @@ let juegoActivo = false; // Cambiado a false para mostrar el menú al inicio
 let menuActivo = true; // Variable para gestionar el menú
 
 function preload() {
-    fondo = loadImage('../assets/img/background.png');
-    sonidoGolpe = loadSound('../assets/sounds/ball.wav');
-    sonidoInicio = loadSound('../assets/sounds/inicio_juego.wav');
-    sonidoGameOver = loadSound('../assets/sounds/game_over.wav');
-    sonidoGol = loadSound('../assets/sounds/scored.wav');
-    sonidoVictoria = loadSound('../assets/sounds/win.wav');
+    fondo = loadImage('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/background.png');
+    sonidoGolpe = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/ball.wav');
+    sonidoInicio = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/inicio_juego.wav');
+    sonidoGameOver = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/game_over.wav');
+    sonidoGol = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/scored.wav');
+    sonidoVictoria = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/win.wav');
 }
 
 function setup() {
