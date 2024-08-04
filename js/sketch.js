@@ -34,9 +34,8 @@ let sonidoVictoria;
 
 let juegoActivo = false;
 let menuActivo = true;
-
 function preload() {
-      fondo = loadImage('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/background.png');
+    fondo = loadImage('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/background.png');
     sonidoGolpe = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/ball.wav');
     sonidoInicio = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/inicio_juego.wav');
     sonidoGameOver = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/game_over.wav');
@@ -82,7 +81,7 @@ function draw() {
         textAlign(CENTER, CENTER);
         text("Pong Game", width / 2, height / 2 - 40);
         textSize(20);
-        text("Presiona ENTER para Iniciar", width / 2, height / 2);
+        text("Presiona ENTER o toca la pantalla para Iniciar", width / 2, height / 2);
         return;
     }
 
@@ -106,7 +105,7 @@ function draw() {
         textAlign(CENTER, CENTER);
         text(puntajeJugador === 5 ? "¡Jugador Gana!" : "¡Computadora Gana!", width / 2, height / 2);
         textSize(20);
-        text("Presiona ENTER para Reiniciar", width / 2, height / 2 + 50);
+        text("Presiona ENTER o toca la pantalla para Reiniciar", width / 2, height / 2 + 50);
         return;
     }
 
@@ -266,4 +265,17 @@ function keyPressed() {
             juegoActivo = true;
         }
     }
+}
+
+// Manejo de eventos táctiles para reiniciar el juego
+function touchStarted() {
+    if (!juegoActivo || puntajeJugador === 5 || puntajeComputadora === 5) {
+        menuActivo = false;
+        juegoActivo = true;
+        puntajeJugador = 0;
+        puntajeComputadora = 0;
+        resetPelota();
+        return false; // Prevenir el comportamiento predeterminado del evento táctil
+    }
+    return false; // Prevenir el comportamiento predeterminado del evento táctil
 }
