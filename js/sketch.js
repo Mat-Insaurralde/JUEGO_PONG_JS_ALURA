@@ -36,7 +36,7 @@ let juegoActivo = false; // Cambiado a false para mostrar el menú al inicio
 let menuActivo = true; // Variable para gestionar el menú
 
 function preload() {
-    fondo = loadImage('../img/background.png');
+    fondo = loadImage('/img/background.png');
     sonidoGolpe = loadSound('../sounds/ball.wav');
     sonidoInicio = loadSound('../sounds/inicioJuego.wav');
     sonidoGameOver = loadSound('../sounds/gameOver.wav');
