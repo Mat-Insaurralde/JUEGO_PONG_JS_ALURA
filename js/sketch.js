@@ -36,12 +36,12 @@ let juegoActivo = false; // Cambiado a false para mostrar el menú al inicio
 let menuActivo = true; // Variable para gestionar el menú
 
 function preload() {
-    fondo = loadImage('/img/background.png');
-    sonidoGolpe = loadSound('../sounds/ball.wav');
-    sonidoInicio = loadSound('../sounds/inicioJuego.wav');
-    sonidoGameOver = loadSound('../sounds/gameOver.wav');
-    sonidoGol = loadSound('../sounds/scored.wav');
-    sonidoVictoria = loadSound('../sounds/win.wav');
+    fondo = loadImage('/assets/img/background.png');
+    sonidoGolpe = loadSound('/assets/sounds/ball.wav');
+    sonidoInicio = loadSound('/assets/sounds/inicioJuego.wav');
+    sonidoGameOver = loadSound('/assets/sounds/gameOver.wav');
+    sonidoGol = loadSound('/assets/sounds/scored.wav');
+    sonidoVictoria = loadSound('/assets/sounds/win.wav');
 }
 
 function setup() {
