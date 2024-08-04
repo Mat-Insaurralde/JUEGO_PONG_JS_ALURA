@@ -34,6 +34,8 @@ let sonidoVictoria;
 
 let juegoActivo = false;
 let menuActivo = true;
+let esPantallaCompleta = false;
+
 function preload() {
     fondo = loadImage('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/background.png');
     sonidoGolpe = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/ball.wav');
@@ -82,6 +84,7 @@ function draw() {
         text("Pong Game", width / 2, height / 2 - 40);
         textSize(20);
         text("Presiona ENTER o toca la pantalla para Iniciar", width / 2, height / 2);
+        drawFullScreenButton(); // Dibujar el botón en el menú
         return;
     }
 
@@ -106,6 +109,7 @@ function draw() {
         text(puntajeJugador === 5 ? "¡Jugador Gana!" : "¡Computadora Gana!", width / 2, height / 2);
         textSize(20);
         text("Presiona ENTER o toca la pantalla para Reiniciar", width / 2, height / 2 + 50);
+        drawFullScreenButton(); // Dibujar el botón en la pantalla de fin de juego
         return;
     }
 
@@ -203,6 +207,9 @@ function draw() {
         sonidoGol.play();
         resetPelota();
     }
+
+    // Dibujar el botón de pantalla completa
+    drawFullScreenButton();
 }
 
 function drawRaqueta(x, y, ancho, alto) {
@@ -278,4 +285,27 @@ function touchStarted() {
         return false; // Prevenir el comportamiento predeterminado del evento táctil
     }
     return false; // Prevenir el comportamiento predeterminado del evento táctil
+}
+
+function drawFullScreenButton() {
+    let botonTamano = 50;
+    let botonColor = color(102, 255, 102);
+    fill(botonColor);
+    noStroke();
+    rect(width - botonTamano - 10, 10, botonTamano, botonTamano, 10);
+
+    fill(0);
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    text(esPantallaCompleta ? "⛶" : "⛶", width - botonTamano / 2 - 10, 10 + botonTamano / 2);
+
+    if (mouseIsPressed && mouseX > width - botonTamano - 10 && mouseX < width - 10 && mouseY > 10 && mouseY < 10 + botonTamano) {
+        toggleFullScreen();
+    }
+}
+
+function toggleFullScreen() {
+    let fs = fullscreen();
+    fullscreen(!fs);
+    esPantallaCompleta = !fs;
 }
