@@ -1,17 +1,17 @@
-let ancho = 800;
-let alto = 400;
+let ancho;
+let alto;
 
 let jugadorY;
-let jugadorAltura = 70;
-let jugadorAnchura = 10;
+let jugadorAltura;
+let jugadorAnchura;
 
 let computadoraY;
-let computadoraAltura = 70;
-let computadoraAnchura = 10;
+let computadoraAltura;
+let computadoraAnchura;
 
 let pelotaX;
 let pelotaY;
-let pelotaDiametro = 20;
+let pelotaDiametro;
 let velocidadPelotaX;
 let velocidadPelotaY;
 let velocidadInicial = 5;
@@ -32,11 +32,11 @@ let sonidoGameOver;
 let sonidoGol;
 let sonidoVictoria;
 
-let juegoActivo = false; // Cambiado a false para mostrar el menú al inicio
-let menuActivo = true; // Variable para gestionar el menú
+let juegoActivo = false;
+let menuActivo = true;
 
 function preload() {
-    fondo = loadImage('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/background.png');
+      fondo = loadImage('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/background.png');
     sonidoGolpe = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/ball.wav');
     sonidoInicio = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/inicio_juego.wav');
     sonidoGameOver = loadSound('https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/sounds/game_over.wav');
@@ -45,9 +45,32 @@ function preload() {
 }
 
 function setup() {
+    ancho = windowWidth;
+    alto = windowHeight;
+    jugadorAltura = alto * 0.2;
+    jugadorAnchura = ancho * 0.02;
+    computadoraAltura = alto * 0.2;
+    computadoraAnchura = ancho * 0.02;
+    pelotaDiametro = ancho * 0.03;
     createCanvas(ancho, alto);
     graficosPelota = createGraphics(pelotaDiametro, pelotaDiametro);
     sonidoInicio.play();
+    updateGraphicsPelota(); // Asegúrate de que el gráfico de la pelota esté actualizado al principio
+    resetPelota();
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    ancho = windowWidth;
+    alto = windowHeight;
+    jugadorAltura = alto * 0.2;
+    jugadorAnchura = ancho * 0.02;
+    computadoraAltura = alto * 0.2;
+    computadoraAnchura = ancho * 0.02;
+    pelotaDiametro = ancho * 0.03;
+    graficosPelota.resize(pelotaDiametro, pelotaDiametro); // Redimensionar el gráfico de la pelota
+    updateGraphicsPelota(); // Redibujar el gráfico de la pelota
+    resetPelota();
 }
 
 function draw() {
@@ -159,11 +182,11 @@ function draw() {
         computadoraY += 4;
     }
     
-    // Movimiento del jugador
-    if (keyIsDown(UP_ARROW)) {
+    // Movimiento del jugador usando teclas y eventos táctiles
+    if (keyIsDown(UP_ARROW) || (touches.length > 0 && touches[0].x < width / 2)) {
         jugadorY -= 5;
     }
-    if (keyIsDown(DOWN_ARROW)) {
+    if (keyIsDown(DOWN_ARROW) || (touches.length > 0 && touches[0].x > width / 2)) {
         jugadorY += 5;
     }
     
