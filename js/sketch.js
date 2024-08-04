@@ -38,8 +38,8 @@ let menuActivo = true; // Variable para gestionar el menú
 function preload() {
     fondo = loadImage('../assets/img/background.png');
     sonidoGolpe = loadSound('../assets/sounds/ball.wav');
-    sonidoInicio = loadSound('../assets/sounds/inicioJuego.wav');
-    sonidoGameOver = loadSound('../assets/sounds/gameOver.wav');
+    sonidoInicio = loadSound('../assets/sounds/inicio_juego.wav');
+    sonidoGameOver = loadSound('../assets/sounds/game_over.wav');
     sonidoGol = loadSound('../assets/sounds/scored.wav');
     sonidoVictoria = loadSound('../assets/sounds/win.wav');
 }
