@@ -69,10 +69,9 @@ function windowResized() {
     computadoraAltura = alto * 0.2;
     computadoraAnchura = ancho * 0.02;
     pelotaDiametro = ancho * 0.03;
-    graficosPelota.resize(pelotaDiametro, pelotaDiametro); // Redimensionar el gráfico de la pelota
-    
+    graficosPelota = createGraphics(pelotaDiametro, pelotaDiametro); // Crea un nuevo gráfico con las nuevas dimensiones
     updateGraphicsPelota(); // Redibujar el gráfico de la pelota
-   resetPelota(); 
+    resetPelota();
 }
 
 function draw() {
@@ -221,6 +220,7 @@ function drawRaqueta(x, y, ancho, alto) {
 function updateGraphicsPelota() {
     graficosPelota.clear();
     graficosPelota.noStroke();
+    graficosPelota.ellipseMode(CENTER); // Asegúrate de que el modo de dibujo sea centrado
     let gradiente = graficosPelota.drawingContext.createRadialGradient(
         pelotaDiametro / 2, pelotaDiametro / 2, 5,
         pelotaDiametro / 2, pelotaDiametro / 2, pelotaDiametro / 2
