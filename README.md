@@ -2,7 +2,7 @@
 
 ¡Bienvenido a mi versión del juego Pong!
 
-![Captura de pantalla del juego](./assets/jurgo pong.jpg)
+![Captura de pantalla del juego](https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/jurgo pong.jpg)
 
 ## Descripción
 
