@@ -95,7 +95,7 @@ function draw() {
         stroke(255);
         strokeWeight(4);
         noFill();
-       // rect(0, 0, width, height);
+    
         
         textSize(28);
         textAlign(CENTER, TOP);
