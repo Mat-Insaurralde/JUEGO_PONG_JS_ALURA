@@ -70,8 +70,9 @@ function windowResized() {
     computadoraAnchura = ancho * 0.02;
     pelotaDiametro = ancho * 0.03;
     graficosPelota.resize(pelotaDiametro, pelotaDiametro); // Redimensionar el gráfico de la pelota
+    
     updateGraphicsPelota(); // Redibujar el gráfico de la pelota
-    resetPelota();
+   resetPelota(); 
 }
 
 function draw() {
@@ -116,12 +117,7 @@ function draw() {
     // Dibujar fondo
     background(fondo);
     
-    // Dibujar marco
-    stroke(255);
-    strokeWeight(4);
-    noFill();
-    rect(0, 0, width, height);
-    
+  
     // Dibujar marcador
     textSize(28);
     textAlign(CENTER, TOP);
