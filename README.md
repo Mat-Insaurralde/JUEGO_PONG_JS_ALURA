@@ -14,7 +14,7 @@ Este es un juego de Pong simple implementado en JavaScript utilizando la bibliot
 
 - Usa las teclas de flecha hacia arriba y hacia abajo para mover la raqueta del jugador.
 - Toca la pantalla para mover la raqueta en dispositivos móviles.
-- Doble toque para cambiar a pantalla completa.
+- Boton para cambiar a pantalla completa.
 
 ## Características
 
@@ -31,3 +31,6 @@ Este es un juego de Pong simple implementado en JavaScript utilizando la bibliot
 ```bash
 git clone https://github.com/tuusuario/tu-repositorio.git
 cd tu-repositorio
+
+o juega en el siguiente link:https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/
+
