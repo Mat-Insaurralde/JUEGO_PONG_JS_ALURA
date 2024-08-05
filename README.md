@@ -2,8 +2,8 @@
 
 ¡Bienvenido a mi versión del juego Pong!
 
-![Captura de pantalla del juego](https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/juego_pong.jpg)
 
+![Descripción de la imagen]([https://ruta/a/la/imagen.jpg](https://mat-insaurralde.github.io/JUEGO_PONG_JS_ALURA/assets/img/juego_pong.jpg))
 ## Descripción
 
 Este es un juego de Pong simple implementado en JavaScript utilizando la biblioteca p5.js. El jugador compite contra la computadora para ganar puntos.
