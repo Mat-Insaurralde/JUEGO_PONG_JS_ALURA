@@ -4,7 +4,7 @@
 
 
 
-![Descripción de la imagen](./assets/img/juego_pong.jpg)
+![Descripción de la imagen](assets/img/juego_pong.JPG)
 
 ## Descripción
 
